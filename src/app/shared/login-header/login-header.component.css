@@ -1,0 +1,29 @@
+.maahi{
+    color: green;
+}
+.deli{
+   background-color: white;
+   color:orange;
+   font-size: 300%;
+   padding: 0;
+}
+.deli:hover{
+    color: white;
+    background-color: orange ;
+}
+.seli{
+    color: white;
+    background-color: orange;
+    /* border-bottom-width: 10px; */
+    /* font-size: 120%; */
+    /* padding: 0; */
+}
+.ngContainer{
+    margin-top: 10px;
+    margin-right: 10px;
+    /* width: 10%; */
+    padding: 20px 20px 20px 20px;
+    position: relative;
+    margin-left: 80%;
+    background-color:rgb(88, 190, 88);
+}

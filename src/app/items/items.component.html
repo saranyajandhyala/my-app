@@ -1,0 +1,40 @@
+<!-- Add Items to the Items-list -->
+<!-- <button (ngClick)="onClick()">Add</button> -->
+<div [ngStyle]="{ display: status }" class="container itmReg">
+  <form #Items="ngForm" (ngSubmit)="add(Items.value); itemName.value=''; itemPrice.value=''" class="itmReg">
+    <h4 class="lb1">Add Items</h4>
+    <input #itemName type="text" placeholder="ItemName" class="form-control txt" name="itemName" ngModel/>
+    <input #itemPrice type="number" placeholder="ItemPrice" class="form-control txt" name="itemPrice" ngModel/>
+    <button type="submit" class="btn button1">
+      add
+    </button>
+  </form>
+</div>
+
+<!-- Items-list in the Local Storage -->
+<div class="container itmList  clearfix">
+  <h4 class="lb">Items-list</h4>
+  <span [innerHTML]= status1></span>
+  <div class="container overall">
+    <div *ngFor="let record of records" class="column col">
+      <button class="delete btn1" title="delete record" (click)="delete(record)">x</button>
+      <a (click)="search(record.itemName)" class="anchor">
+        <strong class="col1">{{record.itemName}}</strong>
+        <div class="price">{{'Rs.'+record.itemPrice+'/'}}</div>
+      </a>
+
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+<div class="place" [hidden]=hideElement>
+  <h4 class="name">{{ itmName | uppercase }} Details</h4>
+  <div class="container view">
+    <label class="lb">Price:
+      <input [(ngModel)]="updtPrice" placeholder="Udate Price" />
+    </label>
+  </div>
+  <button (click)="goBack()" class="btn">go back</button>
+  <button (click)="save()" class="btn">save</button>
+</div>

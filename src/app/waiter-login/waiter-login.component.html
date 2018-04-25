@@ -1,0 +1,35 @@
+<!-- Items-list in the Local Storage -->
+<app-login-header></app-login-header>
+
+<div class="place">
+<h4>Items-list</h4>
+<!-- <span [innerHTML]=  status1></span> -->
+  <div *ngFor="let record of records" class="view1">
+    <button (click)="show(record.itemName, record.itemPrice)" class="btn1" >
+      <strong class="spcl">{{record.itemName}}</strong> 
+      <span class="view">{{'Rs.'+record.itemPrice}}</span>
+    </button>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
+  <div [hidden]="hideElement">
+    <h4 class="oll">Order List</h4>
+    <table class="table tbl">
+      <tr>
+        <th class="spcl">ItemName</th> 
+        <th class="spcl">ItemPrice</th>
+        <th class="spcl">Quantity</th>
+      </tr>
+      <tr *ngFor="let record of record_list">
+        <td>{{record.item}}</td>
+        <td>{{record.price}}</td>
+        <td>
+          <input type="text" (blur)="billRecords(record.item,record.price,$event.target.value)">
+        </td>
+      </tr>
+      <tr>
+        <button class="btn" type="submit" (click)="bill()">Submit</button>
+      </tr>
+    </table>
+  </div>

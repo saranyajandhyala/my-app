@@ -1,0 +1,42 @@
+
+<div class="wtrReg">
+  <h4 class="lb">Add Waiters</h4>
+  <form #Waiters="ngForm" (ngSubmit)="add(Waiters.value); waiterName.value=''; resLocation.value=''; phnNo.value=''"
+  class="wtrs">
+    <input #waiterName type="text" placeholder="waiterName" class="form-control txt" name="waiterName" ngModel/>
+    <input #resLocation type="text" placeholder="resLocation" class="form-control txt" name="resLocation" ngModel/>
+    <input #phnNo type="text" placeholder="phnNo" class="form-control txt" name="phnNo" ngModel/>    
+    <button type="submit" class="btn button1">
+      add
+    </button>
+  </form>
+</div>
+
+<div class="wtrlist">
+<h4 class="lb1">Waiter list</h4>
+<span [innerHTML]= status1></span>
+<ul class="waiters">
+  <li *ngFor="let record of records">
+    <a (click)="search(record.waiterName)">
+      <strong>{{record.waiterName}}</strong> <span>{{record.resLocation}}</span>
+    </a>
+    <button class="delete" title="delete record" (click)="delete(record)">x</button>
+  </li>
+</ul>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="place" [hidden]=hideElement>
+  <h4 class="name">{{ wtrName}} Details</h4>
+  <div class="container view">
+    <label class="lb">Location:
+      <input [(ngModel)]="updtLoc" placeholder="Udate Location" />
+    </label>
+    <label class="lb">MobileNo:
+      <input [(ngModel)]="updtPhnNo" placeholder="Update MObileNo" />
+    </label>
+  </div>
+  <button (click)="goBack()" class="btn">go back</button>
+  <button (click)="save()" class="btn">save</button>
+</div>

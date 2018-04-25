@@ -1,0 +1,67 @@
+<app-login-header></app-login-header>
+<div class="div1">
+  <div>
+    <h3 class="invoice">Invoice</h3>
+    <h3 class="pull">Order # 12345</h3>
+  </div>
+  <div class="spa1">
+    <strong>Payment Method:</strong>
+    <br>Visa ending **** 4242
+    <br>jsmith@email.com
+  </div>
+  <div class="pull1">
+    <strong>Order Date:</strong>
+    <br> {{today | date}} {{today | date:'shortTime'}}
+    <br>
+    <br>
+  </div>
+  <br>
+</div>
+
+<div class="container div2">
+  <h2>
+    <strong class="smry">Order Summary</strong>
+  </h2>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th scope="col">ItemName</th>
+        <th scope="col">ItemPrice</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of bill_list">
+        <td>{{record.item}}</td>
+        <td>{{record.price}}</td>
+        <td>{{record.qty}}</td>
+        <td>{{"Rs."+record.price * record.qty}}</td>
+      </tr>
+      <tr>
+        <td class="thick-line"></td>
+        <td class="thick-line"></td>
+        <td class="thick-line">
+          <strong>Subtotal</strong>
+        </td>
+        <td class="thick-line">{{"Rs."+totalFare}}</td>
+      </tr>
+      <tr>
+        <td class="no-line"></td>
+        <td class="no-line"></td>
+        <td class="no-line">
+          <strong>Shipping</strong>
+        </td>
+        <td class="no-line">Rs/15</td>
+      </tr>
+      <tr>
+        <td class="no-line"></td>
+        <td class="no-line"></td>
+        <td class="no-line">
+          <strong>Total</strong>
+        </td>
+        <td class="no-line">Rs.{{totalFare+15}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

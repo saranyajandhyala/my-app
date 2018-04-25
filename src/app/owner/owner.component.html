@@ -1,0 +1,41 @@
+<!-- <app-login-header></app-login-header> -->
+<div class="ownrReg">
+    <h4 class="lb">Add Owner</h4>
+    <form #Owners="ngForm" (ngSubmit)="add(Owners.value); ownerName.value=''; resLocation.value=''; phnNo.value=''" class="wtrs">
+        <input #waiterName type="text" placeholder="ownerName" class="form-control txt" name="ownerName" ngModel/>
+        <input #resLocation type="text" placeholder="resLocation" class="form-control txt" name="resLocation" ngModel/>
+        <input #phnNo type="text" placeholder="phnNo" class="form-control txt" name="phnNo" ngModel/>
+        <button type="submit" class="btn button1">
+            add
+        </button>
+    </form>
+</div>
+
+<div class="ownrList">
+<h4 class="lb">Owners list</h4>
+<span [innerHTML]= status1></span>
+<ul class="owners">
+    <li *ngFor="let record of records">
+        <a (click)="search(record.ownerName)">
+            <strong>{{record.ownerName}}</strong>
+            <span>{{record.resLocation}}</span>
+        </a>
+        <button class="delete" title="delete record" (click)="delete(record)">x</button>
+    </li>
+</ul>
+</div>
+<router-outlet></router-outlet>
+
+<div class="place" [hidden]=hideElement>
+    <h4 class="name">{{ ownerName | uppercase }} Details</h4>
+    <div class="container view">
+        <label class="lb">Location:
+            <input [(ngModel)]="updtLoc" placeholder="Udate Location" />
+        </label>
+        <label class="lb">MobileNo:
+            <input [(ngModel)]="updtPhnNo" placeholder="Update MObileNo" />
+        </label>
+    </div>
+    <button (click)="goBack()" class="btn">go back</button>
+    <button (click)="save()" class="btn">save</button>
+</div>

@@ -1,0 +1,13 @@
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 200%;
+   background-color: orange;
+   color: black;
+   /* text-align: center; */
+}
+.icons{
+    margin: 10px 0px 10px 24%;
+    height: 5%;
+}

@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container login">
+  <span [innerHTML]="status" class="spa1"></span>
+  <span [innerHTML]="status1" class="spa1"></span>
+  <h2 class="head1">Login</h2>
+  <form #loginForm= "ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <div class="form-group">
+      <label class="inpt1">UserName</label>
+      <input type="text" class="form-control input_size" name="username" ngModel>
+    </div>
+    <div class="form-group">
+      <label class="inpt1">Password</label>
+      <input type="password" class="form-control " name="password" ngModel>
+    </div>
+    <button type="submit" class="btn button">Submit</button>
+  </form>
+</div>

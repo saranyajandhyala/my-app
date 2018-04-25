@@ -1,0 +1,34 @@
+.invoice{
+    position: absolute;
+    left: 10px;
+    top: 20%;
+}
+.pull{
+    position: absolute;
+    right: 10px;
+    top: 20%;
+}
+.spa1{
+    position: absolute;  
+    left: 10px;  
+    top: 27%;
+}
+.pull1{
+    position: absolute;
+    right: 10px;
+    top: 27%;
+}
+.div1{
+    margin: 10px 0px 20px 5px;
+}
+.div2{
+    margin-top: 10%;
+    margin-bottom: 10%;    
+}
+.smry{
+    text-align: center; 
+    margin-left: 40%;
+}
+th, strong{
+    color: orange;
+}
