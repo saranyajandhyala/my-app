@@ -20,6 +20,7 @@ import { BillComponent } from './bill/bill.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoginHeaderComponent } from './shared/login-header/login-header.component';
 import { OwnerLoginComponent } from './owner-login/owner-login.component';
+import { TrailComponent } from './trail/trail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { OwnerLoginComponent } from './owner-login/owner-login.component';
     BillComponent,
     FooterComponent,
     LoginHeaderComponent,
-    OwnerLoginComponent
+    OwnerLoginComponent,
+    TrailComponent
   ],
   imports: [
     BrowserModule,
